@@ -190,65 +190,23 @@
   .skills-stats .progress-bars .progress-bar .progress-con .progress .javascript {
     width: 50%;
   }
-  
-  .portfolios {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2rem;
-    margin-top: 7rem;
+
+  .image-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    gap: 4.7rem;
   }
-  .portfolios .portfolio-item {
-    position: relative;
-  }
-  .portfolios .portfolio-item img {
-    width: 100%;
-    height: 300px;
+  .image-table img {
+    width: 175px; /* Set a fixed width for the images */
+    height: 175px; /* Set a fixed height for the images */
     object-fit: cover;
-    border-radius: 15px;
-  }
-  .portfolios .portfolio-item .hover-item {
-    width: 100%;
-    height: 100%;
-    background-color: var(--color-primary);
-    position: absolute;
-    top: 0;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    opacity: 0;
-    transform: scale(0);
-    transition: all 0.4s ease-in-out;
-  }
-  .portfolios .portfolio-item .hover-item h3 {
-    font-size: 1.5rem;
-    color: white;
-    margin-bottom: 1.5rem;
-  }
-  .portfolios .portfolio-item .hover-item .icons .icon {
-    background-color: var(--color-primary);
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
   }
-  .portfolios .portfolio-item .hover-item .icons .icon i {
-    font-size: 1.5rem;
-    color: white;
-  }
-  .portfolios .portfolio-item .hover-item .icons .icon:hover {
-    background-color: white;
-  }
-  .portfolios .portfolio-item .hover-item .icons .icon:hover i {
-    color: var(--color-primary);
-  }
-  .portfolio-item:hover .hover-item {
-    opacity: 1;
-    transform: scale(1);
+  .image-text {
+    font-size: 25px;
+    margin-top: 10px;
   }
   
   .contact-content-con {
@@ -288,7 +246,12 @@
   .btn-con .social-media-icons .img-fluid {
     margin-right: 15px; /* space between social media icons */
   }
-  
+
+  .image-table .btn-con {
+    justify-content: center;
+    margin-top: 3rem;
+  }
+
   .main-btn {
     background-color: var(--color-secundary);
     border-radius: 30px;
@@ -311,81 +274,51 @@
   }
   
   
-  @media screen and (max-width: 600px) {
-    .about-container {
-      grid-template-columns: 1fr;
-    }
+  @media screen and (max-width: 700px) {  /* Phone */
     .about-container .right-about {
-      grid-template-columns: 1fr;
       padding-top: 2.5rem;
-    }
-    .about-container .left-about {
-      padding-right: 0;
-    }
-    .about-container .left-about p {
-      padding-left: 0;
-    }
-    .portfolios {
-      grid-template-columns: 1fr;
-      padding-bottom: 6rem;
     }
     .section {
       padding: 2rem 2.5rem;
     }
+    .projects {
+      padding-bottom: 55rem;
+    }
+    .projects .project-item {
+      max-width: 150px;
+    }
+    section {
+      padding: 7rem 3rem;
+    }
+    .header-content .left-header .image {
+      padding: 1rem;
+    }
+    .btn-con .social-media-icons {
+      display: flex;
+    }
+    .about-stats .progress-bars {
+      grid-template-columns: 1fr;
+    }
+    .about-container .right-about .about-item .abt-text .large-text{
+      font-size: 20px;
+    }
+    .about-container .right-about .about-item .abt-text .small-text {
+      font-size: 15px;
+      margin-top: -10px;
+    }
+    .projects .project-item {
+      margin-top: 3rem;
+    }
+    .image-table img {
+      width: 120px;
+      height: 120px;
+    }    
     .main-title h2 {
-      font-size: 2rem;
-    }
-    .main-title h2 span {
-      font-size: 2.5rem;
-    }
-    .main-title h2 .bg-text {
       font-size: 3rem;
     }
   }
-  @media screen and (max-width: 1432px) {
-    header {
-      padding: 0 !important;
-    }
-    .about-container .right-about .about-item .abt-text .small-text {
-      padding-left: 1rem;
-      padding-top: 15px;
-    }
-    .contact-content-con {
-      flex-direction: column;
-    }
-    .contact-content-con .right-contact {
-      margin-left: 0;
-      margin-top: 2.5rem;
-    }
-    .contact-content-con .right-contact .input-control-2 {
-      flex-direction: column;
-    }
-    .contact-content-con .right-contact .input-control-2 :last-child {
-      margin-left: 0;
-      margin-top: 1.5rem;
-    }
-  }
-  @media screen and (max-width: 1070px) {
-    .about-container {
-      grid-template-columns: 1fr;
-    }
-    .about-container .right-about {
-      padding-top: 2.5rem;
-    }
-    .portfolios {
-      grid-template-columns: 1fr 1fr;
-    }
-    .main-title h2 {
-      font-size: 4rem;
-    }
-    .main-title h2 span {
-      font-size: 4rem;
-    }
-    .main-title h2 .bg-text {
-      font-size: 4.5rem;
-    }
-  }
-  @media screen and (max-width: 970px) {
+  
+  @media screen and (max-width: 970px) {  /* Tablet */
     section {
       padding: 7rem 6rem;
     }
@@ -427,36 +360,51 @@
     .controlls .control {
       margin: 0.6rem 1rem !important;
     }
+    .projects .image-table {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .projects .project-item {
+      text-align: center;
+      max-width: 200px;
+      margin-bottom: 2rem;
+    }
+    .projects .image-text {
+      margin-top: 10px;
+    }
+    .projects .btn-con {
+      display: flex;
+      justify-content: center;
+    }
   }
   
-  @media screen and (max-width: 700px) {
-    section {
-      padding: 7rem 3rem;
-    }
-    .header-content .left-header .image {
-      padding: 1rem;
-    }
-    .btn-con .social-media-icons {
-      display: flex;
-    }
-    .about-stats .progress-bars {
-      grid-template-columns: 1fr;
-    }
-    .main-title h2 {
-      font-size: 3rem;
-    }
-    .main-title h2 span {
-      font-size: 3rem;
-    }
-    .main-title h2 .bg-text {
-      font-size: 4rem;
-    }
-    .about-container .right-about .about-item .abt-text .large-text {
-      font-size: 1.2rem;
+  @media screen and (max-width: 1440px) { /* Laptop */
+    header {
+      padding: 0 !important;
     }
     .about-container .right-about .about-item .abt-text .small-text {
-      font-size: 15px;
-      padding-top: 5px;
+      padding-left: 1rem;
+      padding-top: 15px;
+    }
+    .contact-content-con {
+      flex-direction: column;
+    }
+    .contact-content-con .right-contact {
+      margin-left: 0;
+      margin-top: 2.5rem;
+    }
+    .contact-content-con .right-contact .input-control-2 {
+      flex-direction: column;
+    }
+    .contact-content-con .right-contact .input-control-2 :last-child {
+      margin-left: 0;
+      margin-top: 1.5rem;
+    }
+    .image-table img {
+      width: 160px;
+      height: 160px;
     }
   }
   
